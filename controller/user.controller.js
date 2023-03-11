@@ -12,7 +12,7 @@ const deleteUser = async (req, res) => {
 
 const getUsers = async (_req, res) => {
   try {
-    const result = await User.find({}); //populate("posts")
+    const result = await User.find({}).populate("posts"); //populate("posts")
     res.send(result);
   } catch (err) {
     res.status(404).send(err);
@@ -22,7 +22,7 @@ const getUsers = async (_req, res) => {
 const getUser = async (req, res) => {
   const id = req.params.id;
   try {
-    const result = await User.findById(id); //populate("posts")
+    const result = await User.findById(id).populate("posts"); //populate("posts")
     res.send(result);
   } catch (err) {
     res.status(404).send(err);

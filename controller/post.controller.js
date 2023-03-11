@@ -9,7 +9,7 @@ exports.createPost = async (req, res) => {
 }
 
 exports.getPosts = async (req, res) => {
-    const posts = await Post.find({}).populate("users");
+    const posts = await Post.find({}).populate("creatorId");
 
     res.send(posts);
 }
