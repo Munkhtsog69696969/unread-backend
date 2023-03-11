@@ -5,7 +5,7 @@ const postSchema=new Schema({
         type:String,
         required:true,
     },
-    
+
     mainNews:{
         type:String,
         required:true,
@@ -26,8 +26,10 @@ const postSchema=new Schema({
 
     createdAt:{
         type: Date,
+        
+        default:Date.now(),
 
-        default:new Date().getFullYear()+"/"+new Date().getMonth()+"/"+new Date().getDay()+"/"+new Date().getHours()+"/"+new Date().getMinutes(),
+        // default:new Date().getFullYear()+"/"+new Date().getMonth()+"/"+new Date().getDay()+"/"+new Date().getHours()+"/"+new Date().getMinutes(),
     }
 })
 
