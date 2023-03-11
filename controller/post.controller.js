@@ -8,4 +8,4 @@ exports.createPost=async(req,res)=>{
     newPost.save();
 
     res.send(newPost)
-}
+}   

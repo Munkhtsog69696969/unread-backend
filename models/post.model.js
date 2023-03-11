@@ -26,8 +26,8 @@ const postSchema=new Schema({
 
     createdAt:{
         type: Date,
-
-        default: Date.now
+        
+        default:new Date().getUTCFullYear()+"/"+new Date().getUTCMonth()+"/"+new Date().getUTCDate()
     }
 })
 
