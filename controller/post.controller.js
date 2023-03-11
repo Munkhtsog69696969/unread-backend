@@ -9,3 +9,9 @@ exports.createPost=async(req,res)=>{
 
     res.send(newPost)
 }   
+
+exports.getPosts=async(req,res)=>{
+    const posts=await Post.find({});
+
+    res.send(posts);
+}
