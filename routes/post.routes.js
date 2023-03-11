@@ -5,5 +5,5 @@ const {createPost}=require("../controller/post.controller");
 const router=express.Router();
 
 router
-    .post("/createPost/:id",createPost)
+    .post("/createPost",createPost)
 module.exports.postRoutes=router;
