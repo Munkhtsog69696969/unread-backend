@@ -20,7 +20,7 @@ router
   .get("/verify", VerifyUser)
   .post("/signup", signupUser)
   .post("/login", loginUser)
-  .post("/adduserpost",addUserPost)
+  .put("/user", addUserPost)
   .delete("/user/:id", deleteUser);
 
 module.exports.userRoutes = router;
