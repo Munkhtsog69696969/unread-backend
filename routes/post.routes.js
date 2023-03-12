@@ -4,7 +4,7 @@ const {createPost}=require("../controller/post.controller");
 
 const {getPosts}=require("../controller/post.controller")
 
-const {getPost}=require("../controller/post.controller")
+const {getPost}=require("../controller/post.controller");
 
 const router=express.Router();
 
