@@ -13,3 +13,14 @@ exports.getPosts = async (req, res) => {
 
     res.send(posts);
 }
+
+exports.getPost = async (req, res) => {
+    const id = req.params.id;
+    try {
+        const result = await Post.findById(id).populate("creatorId");
+        
+        res.send(result);
+    } catch (err) {
+        res.status(404).send("error");
+    }
+};
