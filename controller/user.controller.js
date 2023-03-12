@@ -29,4 +29,16 @@ const getUser = async (req, res) => {
   }
 };
 
-module.exports = { deleteUser, getUser, getUsers };
+const addUserPost = async (req, res) => {
+  const { userId, postId } = req.body;
+  try {
+    const user = await User.findById(userId).populate("posts");
+    user.posts.push(postId);
+    await user.save();
+    res.send(user);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+module.exports = { deleteUser, getUser, getUsers , addUserPost };
