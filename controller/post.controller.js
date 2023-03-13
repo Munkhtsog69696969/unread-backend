@@ -1,11 +1,15 @@
 const Post = require("../models/post.model");
 
 exports.createPost = async (req, res) => {
-    const { title, mainNews, creatorId } = req.body;
+    const { title, mainNews, creatorId , imageUrls } = req.body;
 
-    const newPost = await Post.create({ title: title, mainNews: mainNews, creatorId: creatorId });
+    try{
+        const newPost = await Post.create({ title: title, mainNews: mainNews, creatorId: creatorId ,imageUrls:imageUrls });
 
-    res.send(newPost)
+        res.send(newPost)
+    }catch(err){
+        res.status(404).send("error");
+    }
 }
 
 exports.getPosts = async (req, res) => {

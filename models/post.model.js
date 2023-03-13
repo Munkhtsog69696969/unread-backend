@@ -11,7 +11,9 @@ const postSchema=new Schema({
         required:true,
     },
 
-    //image
+    imageUrls:[{
+        type:String,
+    }],
 
     comments:[{
         type:Schema.Types.ObjectId,
