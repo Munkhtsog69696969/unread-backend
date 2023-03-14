@@ -1,5 +1,5 @@
 const { Comment } = require("../models/comment.model");
-const { Post } = require('../models/post.model')
+const  Post  = require('../models/post.model')
 
 const createComment = async (req, res) => {
   const { text, creator } = req.body;
