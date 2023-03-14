@@ -12,4 +12,5 @@ router
     .get("/getPost",getPosts)
     .get("/post/:id",getPost)
     .post("/createPost",createPost)
+    .get("/getPost/:id", getPost)
 module.exports.postRoutes=router;

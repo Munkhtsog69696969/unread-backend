@@ -31,4 +31,16 @@ const deleteComment = async (req, res) => {
   }
 };
 
-module.exports = { createComment, deleteComment, getComments };
+const addCommentsToPost = async (req, res) => {
+  const { postId, commentId } = req.body;
+  try {
+    const post = await Post.findById(postId).populate("comments");
+    post.comments.push(commentId);
+    await post.save();
+    res.send(post);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+module.exports = { createComment, deleteComment, getComments , addCommentsToPost };
